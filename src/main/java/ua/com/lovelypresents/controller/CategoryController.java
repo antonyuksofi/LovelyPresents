@@ -31,9 +31,9 @@ public class CategoryController {
     }
 
 
-    @RequestMapping(value = "/{category_name}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(value = "/{categoryName}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
-    public List getChildrenCategoriesOrProducts(@PathVariable String category_name) {
-        return categoryService.getChildrenCategoriesOrProducts(category_name);
+    public List getChildrenCategoriesOrProducts(@PathVariable String categoryName) {
+        return categoryService.getChildrenCategoriesOrProducts(categoryName);
     }
 }

@@ -25,8 +25,8 @@ public class CategoryService {
         return categoryDao.getChildrenCategories(parentCategoryId);
     }
 
-    public List getChildrenCategoriesOrProducts(String parentCategoryURICode) {
-        int parentCategoryId = categoryDao.getCategoryIdByCode(parentCategoryURICode);
+    public List getChildrenCategoriesOrProducts(String parentCategoryCode) {
+        int parentCategoryId = categoryDao.getCategoryIdByCode(parentCategoryCode);
 
         if (categoryDao.hasChildrenCategories(parentCategoryId))
             return this.getChildrenCategories(parentCategoryId);
