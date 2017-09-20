@@ -4,12 +4,12 @@ import javax.persistence.*;
 import java.util.Date;
 
 /**
- * Created by Sofiia on 14.09.2017.
+ * Created by Sofiia on 19.09.2017.
  */
 
 @Entity
-@Table(name = "products")
-public class Product {
+@Table(name = "categories")
+public class Category {
 
     @Id
     @Column(name = "id")
@@ -25,17 +25,8 @@ public class Product {
     @Column(name = "description")
     private String description;
 
-    @Column(name = "category_id")
-    private int category_id;
-
-    @Column(name = "color_id")
-    private int color_id;
-
-    @Column(name = "price")
-    private int price;
-
-    @Column(name = "count_left")
-    private int count_left;
+    @Column(name = "parent_id")
+    private int parent_id;
 
     @Column(name = "created_at")
     @Temporal(TemporalType.TIMESTAMP)
@@ -77,36 +68,12 @@ public class Product {
         this.description = description;
     }
 
-    public int getCategory_id() {
-        return category_id;
+    public int getParent_id() {
+        return parent_id;
     }
 
-    public void setCategory_id(int category_id) {
-        this.category_id = category_id;
-    }
-
-    public int getColor_id() {
-        return color_id;
-    }
-
-    public void setColor_id(int color_id) {
-        this.color_id = color_id;
-    }
-
-    public int getPrice() {
-        return price;
-    }
-
-    public void setPrice(int price) {
-        this.price = price;
-    }
-
-    public int getCount_left() {
-        return count_left;
-    }
-
-    public void setCount_left(int count_left) {
-        this.count_left = count_left;
+    public void setParent_id(int parent_id) {
+        this.parent_id = parent_id;
     }
 
     public Date getCreated_at() {
@@ -127,15 +94,12 @@ public class Product {
 
     @Override
     public String toString() {
-        return "Product{" +
+        return "Category{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", code='" + code + '\'' +
                 ", description='" + description + '\'' +
-                ", category_id=" + category_id +
-                ", color_id=" + color_id +
-                ", price=" + price +
-                ", count_left=" + count_left +
+                ", parent_id=" + parent_id +
                 ", created_at=" + created_at +
                 ", updated_at=" + updated_at +
                 '}';

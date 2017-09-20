@@ -4,6 +4,7 @@
     <title>Title</title>
 </head>
 <body>
-Hello))))) from Spring)))
+    Вітаємо у магазині Lovely Presents.
+    <a href="/category/">До списку товарів</a>
 </body>
 </html>

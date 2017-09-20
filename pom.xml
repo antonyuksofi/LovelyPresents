@@ -141,15 +141,8 @@
             <version>5.1.36</version>
         </dependency>
 
-        <!--PostgreSQL-->
-        <dependency>
-            <groupId>postgresql</groupId>
-            <artifactId>postgresql</artifactId>
-            <version>9.1-901.jdbc4</version>
-        </dependency>
 
-
-
+        <!--for JSON transfer-->
         <dependency>
             <groupId>org.codehaus.jackson</groupId>
             <artifactId>jackson-mapper-asl</artifactId>
@@ -163,11 +156,35 @@
             <version>2.5.0</version>
         </dependency>
 
-
         <dependency>
             <groupId>jstl</groupId>
             <artifactId>jstl</artifactId>
             <version>1.2</version>
         </dependency>
+
+
+        <dependency>
+            <groupId>org.flywaydb</groupId>
+            <artifactId>flyway-core</artifactId>
+            <version>3.0</version>
+        </dependency>
     </dependencies>
+
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>com.googlecode.flyway</groupId>
+                <artifactId>flyway-maven-plugin</artifactId>
+                <version>1.5</version>
+                <configuration>
+                    <driver>com.mysql.jdbc.Driver</driver>
+                    <url>jdbc:mysql://localhost:3306/lovelypresents</url>
+                    <baseDir>db/migration</baseDir>
+                    <user>admin</user>
+                    <password>1234</password>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>

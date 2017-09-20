@@ -20,7 +20,7 @@ public class ProductService {
         return productDao.getProducts();
     }
 
-    public Product getProduct() {
-        return productDao.getProduct();
+    public List<Product> getProductsByCategory(int categoryId) {
+        return productDao.getProductsByCategory(categoryId);
     }
 }
