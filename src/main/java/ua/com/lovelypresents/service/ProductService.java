@@ -23,4 +23,8 @@ public class ProductService {
     public List<Product> getProductsByCategory(int categoryId) {
         return productDao.getProductsByCategory(categoryId);
     }
+
+    public Product getProductByCode(String code) {
+        return productDao.getProductByCode(code);
+    }
 }

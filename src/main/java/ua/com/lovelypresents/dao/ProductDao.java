@@ -46,4 +46,16 @@ public class ProductDao {
         return productsList;
 
     }
+
+    public Product getProductByCode(String code) {
+        Session session = this.sessionFactory.getCurrentSession();
+
+        String hql = "from Product where code = :code";
+        Query query = session.createQuery(hql);
+        query.setParameter("code", code);
+
+        Product result = (Product) query.getSingleResult();
+
+        return result;
+    }
 }

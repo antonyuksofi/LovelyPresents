@@ -16,7 +16,7 @@ import java.util.List;
  * Created by Sofiia on 14.09.2017.
  */
 @Controller
-@RequestMapping("/products")
+@RequestMapping("/product")
 public class ProductController {
 
     @Autowired
@@ -30,9 +30,9 @@ public class ProductController {
     }
 
 
-    @RequestMapping(value = "/test", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(value = "/{productCode}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
-    public List<Product> getProduct() {
-        return productService.getProductsByCategory(2);
+    public Product getProductByCode(@PathVariable String productCode) {
+        return productService.getProductByCode(productCode);
     }
 }
