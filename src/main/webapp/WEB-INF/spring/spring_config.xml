@@ -9,13 +9,27 @@
     <context:component-scan base-package="ua.com.lovelypresents"/>
 
     <mvc:default-servlet-handler/>
-    <mvc:annotation-driven/>
+
+    <mvc:annotation-driven>
+        <mvc:message-converters>
+            <!--<bean class="org.springframework.http.converter.StringHttpMessageConverter"/>-->
+            <bean class="org.springframework.http.converter.FormHttpMessageConverter">
+                <property name="supportedMediaTypes" value="application/x-www-form-urlencoded" />
+            </bean>
+            <!--<bean class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter">
+                <property name="supportedMediaTypes" value="application/json" />
+            </bean>-->
+        </mvc:message-converters>
+    </mvc:annotation-driven>
+
     <mvc:view-controller path="/" view-name="index"/>
+
 
     <bean id="resolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/pages/"/>
         <property name="suffix" value=".jsp"/>
     </bean>
+
 
     <!-- Database Information -->
     <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
@@ -36,6 +50,7 @@
             <list>
                 <value>ua.com.lovelypresents.model.Product</value>
                 <value>ua.com.lovelypresents.model.Category</value>
+                <value>ua.com.lovelypresents.model.CartItem</value>
             </list>
         </property>
         <property name="hibernateProperties">
@@ -60,6 +75,10 @@
     </bean>
 
     <bean id="productDao" class="ua.com.lovelypresents.dao.ProductDao">
+        <property name="sessionFactory" ref="hibernate5AnnotatedSessionFactory"/>
+    </bean>
+
+    <bean id="cartItemDao" class="ua.com.lovelypresents.dao.CartItemDao">
         <property name="sessionFactory" ref="hibernate5AnnotatedSessionFactory"/>
     </bean>
 
