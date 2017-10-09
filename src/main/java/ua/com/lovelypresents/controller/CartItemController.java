@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import ua.com.lovelypresents.model.CartItem;
 import ua.com.lovelypresents.service.CartItemService;
 
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -25,5 +26,13 @@ public class CartItemController {
     @ResponseStatus(HttpStatus.OK)
     public void addCartItem(@RequestBody MultiValueMap<String, String> formMap) {
         cartItemService.addCartItem(formMap);
+    }
+
+    @RequestMapping(value = "/show", method = RequestMethod.GET)
+    @ResponseBody
+    public List<CartItem> showCart(@RequestParam int userId) {
+        List<CartItem> cart = cartItemService.getCartByUserId(userId);
+
+        return cart;
     }
 }

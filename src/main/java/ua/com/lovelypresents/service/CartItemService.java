@@ -6,6 +6,8 @@ import org.springframework.util.MultiValueMap;
 import ua.com.lovelypresents.dao.CartItemDao;
 import ua.com.lovelypresents.model.CartItem;
 
+import java.util.List;
+
 /**
  * Created by Sofiia on 29.09.2017.
  */
@@ -30,5 +32,11 @@ public class CartItemService {
         cartItem.setCount(Integer.parseInt(formMap.get("count").get(0)));
 
         return cartItem;
+    }
+
+    public List<CartItem> getCartByUserId(int userId) {
+        List<CartItem> cart = cartItemDao.getCartByUserId(userId);
+
+        return cart;
     }
 }
