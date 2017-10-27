@@ -62,15 +62,4 @@
     <bean id="productDao" class="ua.com.lovelypresents.dao.ProductDao">
         <property name="sessionFactory" ref="hibernate5AnnotatedSessionFactory"/>
     </bean>
-
-    <!--Migration-->
-    <!--<bean id="flyway" class="ua.com.lovelypresents.migration.Migration" init-method="repairAndMigrate" >
-        <property name="locations" value="resources/db/migration" />
-        <property name="dataSource" ref="dataSource" />
-        <property name="validateOnMigrate" value="false"/>
-    </bean>
-
-    <bean id="entityManagerFactory" depends-on="flyway" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
-        <property name="dataSource" ref="dataSource" />
-    </bean>-->
 </beans>
