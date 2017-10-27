@@ -134,14 +134,6 @@
             <scope>test</scope>
         </dependency>
 
-        <!--MysQL-->
-        <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-            <version>5.1.36</version>
-        </dependency>
-
-
         <!--for JSON transfer-->
         <dependency>
             <groupId>org.codehaus.jackson</groupId>
@@ -149,20 +141,28 @@
             <version>1.9.13</version>
         </dependency>
 
-        <!--for ukrainian chars-->
+        <!--for ukrainian chars in JSON transfer-->
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
             <version>2.5.0</version>
         </dependency>
 
+        <!--JSTL for JSP-->
         <dependency>
             <groupId>jstl</groupId>
             <artifactId>jstl</artifactId>
             <version>1.2</version>
         </dependency>
 
+        <!--MysQL-->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.36</version>
+        </dependency>
 
+        <!--Flyway-->
         <dependency>
             <groupId>org.flywaydb</groupId>
             <artifactId>flyway-core</artifactId>
@@ -174,15 +174,15 @@
     <build>
         <plugins>
             <plugin>
-                <groupId>com.googlecode.flyway</groupId>
+                <groupId>org.flywaydb</groupId>
                 <artifactId>flyway-maven-plugin</artifactId>
-                <version>1.5</version>
+                <version>4.2.0</version>
                 <configuration>
+                    <user>root</user>
+                    <password>mypass123</password>
                     <driver>com.mysql.jdbc.Driver</driver>
                     <url>jdbc:mysql://localhost:3306/lovelypresents</url>
-                    <baseDir>db/migration</baseDir>
-                    <user>admin</user>
-                    <password>1234</password>
+                    <baselineOnMigrate>true</baselineOnMigrate>
                 </configuration>
             </plugin>
         </plugins>
