@@ -22,12 +22,22 @@ public class CartItemController {
     @Autowired
     CartItemService cartItemService;
 
+    /**
+     * Adds the product to the cart based on ordinary form fields
+     * @param formMap map from which product data is extracted
+     */
     @RequestMapping(value = "/add", method = RequestMethod.POST)
     @ResponseStatus(HttpStatus.OK)
     public void addCartItem(@RequestBody MultiValueMap<String, String> formMap) {
         cartItemService.addCartItem(formMap);
     }
 
+    /**
+     * Shows the cart content for the user by id
+     * @param userId id of user whose cart is to be shown
+     * @return list of CartItems in the cart
+     * @see CartItem
+     */
     @RequestMapping(value = "/show", method = RequestMethod.GET)
     @ResponseBody
     public List<CartItem> showCart(@RequestParam int userId) {
