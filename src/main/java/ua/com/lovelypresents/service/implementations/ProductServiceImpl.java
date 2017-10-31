@@ -1,9 +1,10 @@
-package ua.com.lovelypresents.service;
+package ua.com.lovelypresents.service.implementations;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import ua.com.lovelypresents.dao.ProductDao;
+import ua.com.lovelypresents.dao.interfaces.ProductDao;
 import ua.com.lovelypresents.model.Product;
+import ua.com.lovelypresents.service.interfaces.ProductService;
 
 import java.util.List;
 
@@ -11,7 +12,7 @@ import java.util.List;
  * Created by Sofiia on 14.09.2017.
  */
 @Service
-public class ProductService {
+public class ProductServiceImpl implements ProductService {
 
     @Autowired
     private ProductDao productDao;

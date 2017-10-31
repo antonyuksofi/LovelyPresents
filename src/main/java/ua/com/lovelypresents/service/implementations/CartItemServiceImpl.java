@@ -1,10 +1,11 @@
-package ua.com.lovelypresents.service;
+package ua.com.lovelypresents.service.implementations;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.MultiValueMap;
-import ua.com.lovelypresents.dao.CartItemDao;
+import ua.com.lovelypresents.dao.interfaces.CartItemDao;
 import ua.com.lovelypresents.model.CartItem;
+import ua.com.lovelypresents.service.interfaces.CartItemService;
 
 import java.util.List;
 
@@ -12,7 +13,7 @@ import java.util.List;
  * Created by Sofiia on 29.09.2017.
  */
 @Service
-public class CartItemService {
+public class CartItemServiceImpl implements CartItemService {
 
     @Autowired
     CartItemDao cartItemDao;

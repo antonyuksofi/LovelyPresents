@@ -1,11 +1,11 @@
-package ua.com.lovelypresents.service;
+package ua.com.lovelypresents.service.implementations;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
-import ua.com.lovelypresents.dao.CategoryDao;
-import ua.com.lovelypresents.dao.ProductDao;
+import ua.com.lovelypresents.dao.interfaces.CategoryDao;
+import ua.com.lovelypresents.dao.interfaces.ProductDao;
 import ua.com.lovelypresents.model.Category;
+import ua.com.lovelypresents.service.interfaces.CategoryService;
 
 import java.util.List;
 
@@ -13,7 +13,7 @@ import java.util.List;
  * Created by Sofiia on 19.09.2017.
  */
 @Service
-public class CategoryService {
+public class CategoryServiceImpl implements CategoryService {
 
     @Autowired
     CategoryDao categoryDao;

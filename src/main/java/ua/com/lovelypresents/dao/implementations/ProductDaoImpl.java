@@ -1,10 +1,11 @@
-package ua.com.lovelypresents.dao;
+package ua.com.lovelypresents.dao.implementations;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
+import ua.com.lovelypresents.dao.interfaces.ProductDao;
 import ua.com.lovelypresents.model.Product;
 
 import java.util.Arrays;
@@ -15,7 +16,7 @@ import java.util.List;
  */
 @Repository
 @Transactional
-public class ProductDao {
+public class ProductDaoImpl implements ProductDao {
 
     private SessionFactory sessionFactory;
 

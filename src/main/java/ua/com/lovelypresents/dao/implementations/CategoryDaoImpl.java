@@ -1,4 +1,4 @@
-package ua.com.lovelypresents.dao;
+package ua.com.lovelypresents.dao.implementations;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.orm.jdo.PersistenceManagerHolder;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
+import ua.com.lovelypresents.dao.interfaces.CategoryDao;
 import ua.com.lovelypresents.model.Category;
 
 import javax.persistence.EntityManager;
@@ -17,7 +18,7 @@ import java.util.List;
  */
 @Repository
 @Transactional
-public class CategoryDao {
+public class CategoryDaoImpl implements CategoryDao {
 
     //@Autowired
     private SessionFactory sessionFactory;

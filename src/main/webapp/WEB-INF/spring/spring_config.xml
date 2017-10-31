@@ -73,15 +73,15 @@
     </bean>
 
 
-    <bean id="categoryDao" class="ua.com.lovelypresents.dao.CategoryDao">
+    <bean id="categoryDao" class="ua.com.lovelypresents.dao.implementations.CategoryDaoImpl">
         <property name="sessionFactory" ref="hibernate5AnnotatedSessionFactory"/>
     </bean>
 
-    <bean id="productDao" class="ua.com.lovelypresents.dao.ProductDao">
+    <bean id="productDao" class="ua.com.lovelypresents.dao.implementations.ProductDaoImpl">
         <property name="sessionFactory" ref="hibernate5AnnotatedSessionFactory"/>
     </bean>
 
-    <bean id="cartItemDao" class="ua.com.lovelypresents.dao.CartItemDao">
+    <bean id="cartItemDao" class="ua.com.lovelypresents.dao.implementations.CartItemDaoImpl">
         <property name="sessionFactory" ref="hibernate5AnnotatedSessionFactory"/>
     </bean>
 </beans>
