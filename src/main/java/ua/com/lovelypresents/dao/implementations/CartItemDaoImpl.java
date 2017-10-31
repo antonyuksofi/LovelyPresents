@@ -7,7 +7,6 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 import ua.com.lovelypresents.dao.interfaces.CartItemDao;
 import ua.com.lovelypresents.model.CartItem;
-import ua.com.lovelypresents.model.Product;
 
 import java.util.List;
 

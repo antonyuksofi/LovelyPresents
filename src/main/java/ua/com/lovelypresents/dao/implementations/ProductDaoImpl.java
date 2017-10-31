@@ -8,7 +8,6 @@ import org.springframework.transaction.annotation.Transactional;
 import ua.com.lovelypresents.dao.interfaces.ProductDao;
 import ua.com.lovelypresents.model.Product;
 
-import java.util.Arrays;
 import java.util.List;
 
 /**
