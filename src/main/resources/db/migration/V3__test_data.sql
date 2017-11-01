@@ -38,7 +38,7 @@ values
 alter table products add constraint unique(code);*/
 
 
-insert into users
+/*insert into users
 (email, password, name, created_at, updated_at)
 values
-('antonyuksofi@ukr.net', '111', 'Софія', now(), now());
+('antonyuksofi@ukr.net', '111', 'Софія', now(), now());*/
