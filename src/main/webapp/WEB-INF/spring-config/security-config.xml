@@ -10,6 +10,18 @@
     <http auto-config="true" use-expressions="true">
         <intercept-url pattern="/admin**" access="hasRole('ADMIN')"/>
         <intercept-url pattern="/dba**" access="hasRole('ADMIN') or hasRole('DBA')" />
+
+        <form-login
+                login-page='/login'
+                default-target-url="/login"
+                username-parameter= "j_username"
+                password-parameter= "j_password"
+                login-processing-url= "/j_spring_security_check"
+                authentication-failure-url= "/login/?error=true" />
+
+        <logout logout-url="/j_spring_security_logout" logout-success-url="/login/?logout=true"/>  <!---->
+
+        <csrf disabled= "true"/>
     </http>
 
 
@@ -21,11 +33,11 @@
                 <user name="dba" password="123456" authorities="ROLE_DBA" />
             </user-service>-->
             <jdbc-user-service data-source-ref="dataSource"
-                               users-by-username-query=
-                                       "select username, password, enabled from users where username=?"
-                               authorities-by-username-query=
-                                       "select u.username, a.authority from users u, authorities a
-                                       where u.username = ? and u.id = a.user_id" />
+                       users-by-username-query=
+                               "select username, password, enabled from users where username=?"
+                       authorities-by-username-query=
+                               "select u.username, a.authority from users u, authorities a
+                               where u.username = ? and u.id = a.user_id" />
         </authentication-provider>
     </authentication-manager>
 </beans:beans>

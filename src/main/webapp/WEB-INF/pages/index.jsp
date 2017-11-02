@@ -1,32 +1,42 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
     <title>Title</title>
 </head>
 <body>
-    Вітаємо у магазині Lovely Presents.
-    <a href="/category/">До списку товарів</a>
 
-    <p>Додавання товару в корзину:</p>
-    <form action="/cart/add" method="post" enctype="application/x-www-form-urlencoded">
-        <%--<input type="hidden" name="id" value="123">--%>
-        <input type="hidden" name="user_id" value="1">
-        <p>Товар:</p>
-        <select name="product_id">
-            <option selected value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-        </select>
-        <input type="hidden" name="image" value="test">
-        <p>Кількість:</p>
-        <select name="count">
-            <option selected value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-        </select>
-        <input type="submit" value="Додати в корзину">
-    </form>
+    <security:authorize access= "hasAnyRole('ROLE_ADMIN','ROLE_DBA','ROLE_SUPERUSER', 'ROLE_USER')" var= "isUser"/>
+
+    <c:if test= "${isUser}">
+        <div>
+            <p>
+                Hello, <security:authentication property= "principal.username"/>!
+            </p>
+            <a href= "<c:url value= "/j_spring_security_logout"/>">Logout</a>
+        </div>
+    </c:if>
+
+    <c:if test="${not isUser}">
+        <a href="/login">Sign in</a>
+    </c:if>
+
+
+    <h1>Hello in our shop!</h1>
+    <div>
+        <ul>
+            <li><a href="/category/">List of categories</a></li>
+            <li><a href="/product/all/">All products</a></li>
+            <li><a href="/cart/">Adding to cart (testing)</a></li>
+        </ul>
+    </div>
+
+    <div>
+        <ul>
+            <li><a href="/admin">only for admin</a></li>
+            <li><a href="/dba">only for dba</a></li>
+        </ul>
+    </div>
 </body>
 </html>

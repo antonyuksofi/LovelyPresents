@@ -6,6 +6,8 @@
 
     <display-name>Lovely Presents</display-name>
 
+
+    <!-- Dispatcher Servlet -->
     <servlet>
         <servlet-name>dispatcher</servlet-name>
         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
@@ -23,7 +25,7 @@
     </servlet-mapping>
 
 
-    <!--for security-->
+    <!-- for security -->
     <filter>
         <filter-name>springSecurityFilterChain</filter-name>
         <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
@@ -33,5 +35,18 @@
         <filter-name>springSecurityFilterChain</filter-name>
         <url-pattern>/*</url-pattern>
     </filter-mapping>
+
+
+    <!-- direct mapping URL to JSP -->
+<!--
+    <servlet>
+        <servlet-name>cart_filling</servlet-name>
+        <jsp-file>/WEB-INF/pages/cart_filling.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>cart_filling</servlet-name>
+        <url-pattern>cart_filling</url-pattern>
+    </servlet-mapping>
+-->
 
 </web-app>

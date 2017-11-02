@@ -20,6 +20,13 @@ public class CartItemController {
     @Autowired
     CartItemService cartItemService;
 
+
+    @RequestMapping(value = "/", method = RequestMethod.GET)
+    public String cartFilling() {
+        return "cart_filling";
+    }
+
+
     /**
      * Adds the product to the cart based on ordinary form fields
      * @param formMap map from which product data is extracted

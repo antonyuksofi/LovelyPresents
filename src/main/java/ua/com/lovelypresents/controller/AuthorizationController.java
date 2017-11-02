@@ -6,17 +6,17 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-public class HelloController {
+public class AuthorizationController {
 
     @RequestMapping(value = "/login", method = RequestMethod.GET)
-    public ModelAndView welcomePage() {
+    public String welcomePage() {
 
-        ModelAndView model = new ModelAndView();
+        /*ModelAndView model = new ModelAndView();
         model.addObject("title", "Spring Security Hello World");
         model.addObject("message", "This is welcome page!");
-        model.setViewName("hello");
+        model.setViewName("hello");*/
 
-        return model;
+        return "/login";
     }
 
 
@@ -25,8 +25,8 @@ public class HelloController {
 
         ModelAndView model = new ModelAndView();
         model.addObject("title", "Spring Security Hello World");
-        model.addObject("message", "This is protected page - Admin Page!");
-        model.setViewName("admin");
+        model.addObject("message", "This is protected page - ADMIN Page!");
+        model.setViewName("admin_and_dba");
 
         return model;
 
@@ -38,8 +38,8 @@ public class HelloController {
 
         ModelAndView model = new ModelAndView();
         model.addObject("title", "Spring Security Hello World");
-        model.addObject("message", "This is protected page - Database Page!");
-        model.setViewName("admin");
+        model.addObject("message", "This is protected page - DBA Page!");
+        model.setViewName("admin_and_dba");
 
         return model;
 
