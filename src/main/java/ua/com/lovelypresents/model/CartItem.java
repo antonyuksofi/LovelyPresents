@@ -15,10 +15,10 @@ public class CartItem {
     private int id;
 
     @Column(name = "user_id")
-    private int user_id;
+    private int userId;
 
     @Column(name = "product_id")
-    private int product_id;
+    private int productId;
 
     @Column(name = "image")
     private String image;
@@ -28,9 +28,9 @@ public class CartItem {
 
     public CartItem() {}
 
-    /*public CartItem(int user_id, int product_id, String image, int count) {
-        this.user_id = user_id;
-        this.product_id = product_id;
+    /*public CartItem(int userId, int productId, String image, int count) {
+        this.userId = userId;
+        this.productId = productId;
         this.image = image;
         this.count = count;
     }*/
@@ -43,20 +43,20 @@ public class CartItem {
         this.id = id;
     }
 
-    public int getUser_id() {
-        return user_id;
+    public int getUserId() {
+        return userId;
     }
 
-    public void setUser_id(int user_id) {
-        this.user_id = user_id;
+    public void setUserId(int userId) {
+        this.userId = userId;
     }
 
-    public int getProduct_id() {
-        return product_id;
+    public int getProductId() {
+        return productId;
     }
 
-    public void setProduct_id(int product_id) {
-        this.product_id = product_id;
+    public void setProductId(int productId) {
+        this.productId = productId;
     }
 
     public String getImage() {
@@ -79,8 +79,8 @@ public class CartItem {
     public String toString() {
         return "Cart{" +
                 "id=" + id +
-                ", user_id=" + user_id +
-                ", product_id=" + product_id +
+                ", userId=" + userId +
+                ", productId=" + productId +
                 ", image='" + image + '\'' +
                 ", count=" + count +
                 '}';

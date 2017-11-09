@@ -26,24 +26,24 @@ public class Product {
     private String description;
 
     @Column(name = "category_id")
-    private int category_id;
+    private int categoryId;
 
     @Column(name = "color_id")
-    private int color_id;
+    private int colorId;
 
     @Column(name = "price")
     private int price;
 
     @Column(name = "count_left")
-    private int count_left;
+    private int countLeft;
 
     @Column(name = "created_at")
     @Temporal(TemporalType.TIMESTAMP)
-    private Date created_at;
+    private Date createdAt;
 
     @Column(name = "updated_at")
     @Temporal(TemporalType.TIMESTAMP)
-    private Date updated_at;
+    private Date updatedAt;
 
     public int getId() {
         return id;
@@ -77,20 +77,20 @@ public class Product {
         this.description = description;
     }
 
-    public int getCategory_id() {
-        return category_id;
+    public int getcategoryId() {
+        return categoryId;
     }
 
-    public void setCategory_id(int category_id) {
-        this.category_id = category_id;
+    public void setcategoryId(int categoryId) {
+        this.categoryId = categoryId;
     }
 
-    public int getColor_id() {
-        return color_id;
+    public int getcolorId() {
+        return colorId;
     }
 
-    public void setColor_id(int color_id) {
-        this.color_id = color_id;
+    public void setcolorId(int colorId) {
+        this.colorId = colorId;
     }
 
     public int getPrice() {
@@ -101,28 +101,28 @@ public class Product {
         this.price = price;
     }
 
-    public int getCount_left() {
-        return count_left;
+    public int getcountLeft() {
+        return countLeft;
     }
 
-    public void setCount_left(int count_left) {
-        this.count_left = count_left;
+    public void setcountLeft(int countLeft) {
+        this.countLeft = countLeft;
     }
 
-    public Date getCreated_at() {
-        return created_at;
+    public Date getCreatedAt() {
+        return createdAt;
     }
 
-    public void setCreated_at(Date created_at) {
-        this.created_at = created_at;
+    public void setCreatedAt(Date createdAt) {
+        this.createdAt = createdAt;
     }
 
-    public Date getUpdated_at() {
-        return updated_at;
+    public Date getUpdatedAt() {
+        return updatedAt;
     }
 
-    public void setUpdated_at(Date updated_at) {
-        this.updated_at = updated_at;
+    public void setUpdatedAt(Date updatedAt) {
+        this.updatedAt = updatedAt;
     }
 
     @Override
@@ -132,12 +132,12 @@ public class Product {
                 ", name='" + name + '\'' +
                 ", code='" + code + '\'' +
                 ", description='" + description + '\'' +
-                ", category_id=" + category_id +
-                ", color_id=" + color_id +
+                ", categoryId=" + categoryId +
+                ", colorId=" + colorId +
                 ", price=" + price +
-                ", count_left=" + count_left +
-                ", created_at=" + created_at +
-                ", updated_at=" + updated_at +
+                ", countLeft=" + countLeft +
+                ", createdAt=" + createdAt +
+                ", updatedAt=" + updatedAt +
                 '}';
     }
 }

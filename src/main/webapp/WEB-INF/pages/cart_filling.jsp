@@ -7,9 +7,9 @@
     <p>Adding product to the cart (testing):</p>
     <form action="/cart/add" method="post" enctype="application/x-www-form-urlencoded">
         <%--<input type="hidden" name="id" value="123">--%>
-        <input type="hidden" name="user_id" value="1">
+        <input type="hidden" name="userId" value="1">
         <p>Product:</p>
-        <select name="product_id">
+        <select name="productId">
             <option selected value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>

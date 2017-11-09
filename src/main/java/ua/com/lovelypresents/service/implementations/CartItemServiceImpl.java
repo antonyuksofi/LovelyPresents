@@ -27,8 +27,8 @@ public class CartItemServiceImpl implements CartItemService {
     private CartItem fromMapToCartItem(MultiValueMap<String, String> formMap) {
         CartItem cartItem = new CartItem();
 
-        cartItem.setUser_id(Integer.parseInt(formMap.get("user_id").get(0)));
-        cartItem.setProduct_id(Integer.parseInt(formMap.get("product_id").get(0)));
+        cartItem.setUserId(Integer.parseInt(formMap.get("userId").get(0)));
+        cartItem.setProductId(Integer.parseInt(formMap.get("productId").get(0)));
         cartItem.setImage(formMap.get("image").get(0));
         cartItem.setCount(Integer.parseInt(formMap.get("count").get(0)));
 

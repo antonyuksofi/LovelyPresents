@@ -37,9 +37,9 @@ public class ProductDaoImpl implements ProductDao {
     public List getProductsByCategory(int categoryId) {
         Session session = this.sessionFactory.getCurrentSession();
 
-        String hql = "from Product where category_id = :category_id";
+        String hql = "from Product where categoryId = :categoryId";
         Query query = session.createQuery(hql);
-        query.setParameter("category_id", new Integer(categoryId));
+        query.setParameter("categoryId", new Integer(categoryId));
 
         List<Product> productsList = query.list();
 

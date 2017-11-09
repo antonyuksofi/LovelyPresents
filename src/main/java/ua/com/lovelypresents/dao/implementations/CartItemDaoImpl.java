@@ -32,9 +32,9 @@ public class CartItemDaoImpl implements CartItemDao {
     public List<CartItem> getCartByUserId(int userId) {
         Session session = this.sessionFactory.getCurrentSession();
 
-        String hql = "from CartItem where user_id = :user_id";
+        String hql = "from CartItem where userId = :userId";
         Query query = session.createQuery(hql);
-        query.setParameter("user_id", new Integer(userId));
+        query.setParameter("userId", new Integer(userId));
 
         List<CartItem> cart = query.list();
 

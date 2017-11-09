@@ -28,9 +28,9 @@ public class CategoryDaoImpl implements CategoryDao {
     public List<Category> getChildrenCategories(int parentCategoryId) {
         Session session = this.sessionFactory.getCurrentSession();
 
-        String hql = "from Category where parent_id = :parent_id";
+        String hql = "from Category where parentId = :parentId";
         Query query = session.createQuery(hql);
-        query.setParameter("parent_id", new Integer(parentCategoryId));
+        query.setParameter("parentId", new Integer(parentCategoryId));
 
         List<Category> categoriesList = query.list();
 
@@ -41,9 +41,9 @@ public class CategoryDaoImpl implements CategoryDao {
     public int getCategoryIdByCode(String categoryCode) {
         Session session = this.sessionFactory.getCurrentSession();
 
-        String hql = "select id from Category where code = :category_code";
+        String hql = "select id from Category where code = :categoryCode";
         Query query = session.createQuery(hql);
-        query.setParameter("category_code", categoryCode);
+        query.setParameter("categoryCode", categoryCode);
 
         List<Integer> result = query.list();
 
@@ -60,9 +60,9 @@ public class CategoryDaoImpl implements CategoryDao {
     public boolean hasChildrenCategories(int categoryId) {
         Session session = this.sessionFactory.getCurrentSession();
 
-        String hql = "select count(*) from Category where parent_id = :category_id";
+        String hql = "select count(*) from Category where parentId = :categoryId";
         Query query = session.createQuery(hql);
-        query.setParameter("category_id", categoryId);
+        query.setParameter("categoryId", categoryId);
 
         int childrenAmount = ((Number)query.uniqueResult()).intValue();
 
