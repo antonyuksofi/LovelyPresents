@@ -9,9 +9,7 @@ import ua.com.lovelypresents.service.interfaces.CartItemService;
 
 import java.util.List;
 
-/**
- * Created by Sofiia on 29.09.2017.
- */
+
 @Service
 public class CartItemServiceImpl implements CartItemService {
 

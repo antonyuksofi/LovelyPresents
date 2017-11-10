@@ -1,6 +1,5 @@
 package ua.com.lovelypresents.dao.implementations;
 
-import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 import ua.com.lovelypresents.dao.interfaces.CartItemDao;

@@ -9,9 +9,7 @@ import ua.com.lovelypresents.service.interfaces.CategoryService;
 
 import java.util.List;
 
-/**
- * Created by Sofiia on 19.09.2017.
- */
+
 @Service
 public class CategoryServiceImpl implements CategoryService {
 

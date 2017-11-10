@@ -10,15 +10,13 @@ import ua.com.lovelypresents.service.interfaces.CartItemService;
 
 import java.util.List;
 
-/**
- * Created by Sofiia on 29.09.2017.
- */
+
 @Controller
 @RequestMapping("/cart")
 public class CartItemController {
 
     @Autowired
-    CartItemService cartItemService;
+    private CartItemService cartItemService;
 
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
@@ -36,6 +34,7 @@ public class CartItemController {
     public void addCartItem(@RequestBody MultiValueMap<String, String> formMap) {
         cartItemService.addCartItem(formMap);
     }
+
 
     /**
      * Shows the cart content for the user by id

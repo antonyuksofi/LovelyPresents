@@ -8,9 +8,7 @@ import ua.com.lovelypresents.service.interfaces.ProductService;
 
 import java.util.List;
 
-/**
- * Created by Sofiia on 14.09.2017.
- */
+
 @Service
 public class ProductServiceImpl implements ProductService {
 

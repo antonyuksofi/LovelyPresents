@@ -12,16 +12,14 @@ import ua.com.lovelypresents.service.interfaces.CategoryService;
 
 import java.util.List;
 
-/**
- * Created by Sofiia on 19.09.2017.
- */
 
 @Controller
 @RequestMapping("/category")
 public class CategoryController {
 
     @Autowired
-    CategoryService categoryService;
+    private CategoryService categoryService;
+
 
     /**
      * Gets categories of the highest (root) level.
@@ -32,6 +30,7 @@ public class CategoryController {
     public List<Category> getMainCategories() {
         return categoryService.getChildrenCategories(0);
     }
+
 
     /**
      * Gets children categories for non-leaf category and products for leaf category.
