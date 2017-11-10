@@ -12,7 +12,9 @@
     <import resource="persistence.xml" />
 
 
-    <context:component-scan base-package="ua.com.lovelypresents"/>
+    <context:component-scan base-package="ua.com.lovelypresents">
+        <context:exclude-filter type="regex" expression=".*Hiber"/>
+    </context:component-scan>
 
     <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
         <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
